@@ -12,3 +12,5 @@ const alunas = [
 ]
 
 // 1) Fazer uma função que retorne um array de todas as médias
+
+// 2) Fazer uma função que retorne um array de nomes das aprovadas
