@@ -13,4 +13,19 @@ const alunas = [
 
 // 1) Fazer uma função que retorne um array de todas as médias
 
+function mediasAlunas() {
+  let mediaAluna = alunas.map((aluna) => {
+    return ((aluna.prova.p1 + aluna.prova.p2 + aluna.prova.p3) / 3).toFixed(1)
+  })
+  console.log(mediaAluna)
+
+  if (mediaAluna >= 7) {
+    return "Aprovada"
+  } else {
+    return "Reprovada"
+  }
+}
+
+mediasAlunas()
+
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
