@@ -21,15 +21,15 @@ function mediasAlunas() {
     ).toFixed(1)
     return parseFloat(media)
   })
-  console.log(mediaAluna)
+  return mediaAluna
 }
 
-mediasAlunas()
+console.log(mediasAlunas())
 
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
 
-function alunasAprovadas(media) {
-  return media >= 7
-}
+const alunasAprovadas = mediasAlunas.filter(function (aluna) {
+  return aluna >= 7
+})
 
-var nota = alunas.filter(alunasAprovadas)
+console.log(alunasAprovadas)
