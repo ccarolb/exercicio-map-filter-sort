@@ -37,4 +37,18 @@ function nomesAprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-console.log(nomesAprovadas(alunas))
+//console.log(nomesAprovadas(alunas))
+
+//3) Fazer uma função que retorne um array de nome das reprovadas
+
+function nomesReprovadas(alunas) {
+
+  let nomeAlunas = mediasAlunas(alunas).filter((aluna) => {
+    if (aluna.media < 7) {
+      return aluna.nome
+    }
+  })
+  return nomeAlunas.map((aluna) => aluna.nome)
+}
+
+console.log(nomesReprovadas(alunas))
