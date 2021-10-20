@@ -97,9 +97,42 @@ function maiorNota(alunas) {
   return notaMaior
 }
 
+//7) Fazer uma função que retorne o nome da aluna com menor nota
+
+function menorNota(alunas) {
+  let funcaoMedia = mediasAlunas(alunas)
+  let mediaAlunas = funcaoMedia.map((alunas) => alunas.media)
+
+  let mediaMin = mediaAlunas.reduce(function (a, b) {
+    return Math.min(a, b)
+  })
+
+  let notaMenor = funcaoMedia.filter((aluna) => {
+    if (aluna.media == mediaMin) {
+      return aluna.nome
+    }
+  })
+  return notaMenor
+}
+
+// 1) Fazer uma função que retorne um array de todas as médias
 
 //console.log(mediasAlunas(alunas))
+
+// 2) Fazer uma função que retorne um array de nomes das aprovadas
+
 //console.log(nomesAprovadas(alunas))
+
+// 3) Fazer uma função que retorne um array de nome das reprovadas
+
 // console.log(nomesReprovadas(alunas))
-console.log(arrayObjetos(alunas))
+
+// 4) Fazer uma função que retorne um array de objetos:
+//console.log(arrayObjetos(alunas))
+
+//6) Fazer uma função que retorne o nome da aluna com maior nota
 //console.log(maiorNota(alunas))
+
+//7) Fazer uma função que retorne o nome da aluna com menor nota
+
+console.log(menorNota(alunas))
