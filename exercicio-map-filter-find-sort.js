@@ -42,7 +42,6 @@ function nomesAprovadas(alunas) {
 //3) Fazer uma função que retorne um array de nome das reprovadas
 
 function nomesReprovadas(alunas) {
-
   let nomeAlunas = mediasAlunas(alunas).filter((aluna) => {
     if (aluna.media < 7) {
       return aluna.nome
@@ -51,4 +50,33 @@ function nomesReprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-console.log(nomesReprovadas(alunas))
+// console.log(nomesReprovadas(alunas))
+
+//4) Fazer uma função que retorne um array de objetos
+
+function arrayObjetos(alunas) {
+  let medias = mediasAlunas(alunas).filter((alunas) => {
+    if (alunas.media >= 7) {
+      let aprovadas = [
+        {
+          nome: alunas.nome,
+          media: alunas.media,
+          aprovadas: true
+        }
+      ]
+      console.log(aprovadas)
+    } else {
+      let reprovadas = [
+        {
+          nome: alunas.nome,
+          media: alunas.media,
+          aprovadas: false
+        }
+      ]
+      console.log(reprovadas)
+    }
+  })
+  return medias
+}
+
+console.log(arrayObjetos(alunas))
