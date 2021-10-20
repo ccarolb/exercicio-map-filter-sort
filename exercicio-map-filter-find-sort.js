@@ -64,7 +64,7 @@ function arrayObjetos(alunas) {
         media: alunas.media,
         aprovadas: alunas.aprovadas
       }
-      console.log(aprovadas)
+      return aprovadas
     } else {
       let reprovadas =
       {
@@ -72,7 +72,7 @@ function arrayObjetos(alunas) {
         media: alunas.media,
         aprovadas: alunas.aprovadas
       }
-      console.log(reprovadas)
+      return reprovadas
     }
   })
   return medias
@@ -128,11 +128,11 @@ function menorNota(alunas) {
 // console.log(nomesReprovadas(alunas))
 
 // 4) Fazer uma função que retorne um array de objetos:
-//console.log(arrayObjetos(alunas))
+console.log(arrayObjetos(alunas))
 
 //6) Fazer uma função que retorne o nome da aluna com maior nota
 //console.log(maiorNota(alunas))
 
 //7) Fazer uma função que retorne o nome da aluna com menor nota
 
-console.log(menorNota(alunas))
+//console.log(menorNota(alunas))
