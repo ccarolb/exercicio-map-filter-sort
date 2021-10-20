@@ -17,12 +17,15 @@ function mediasAlunas(medias) {
   let mediaAluna = medias.map((aluna) => {
     let media =
       ((aluna.prova.p1 + aluna.prova.p2 + aluna.prova.p3) / 3).toFixed(1) * 1
-    return { media: media, nome: aluna.nome }
+    return ({
+      media: media,
+      nome: aluna.nome,
+      aprovadas: media >= 7
+    })
   })
   return mediaAluna.filter((aluna) => aluna.media)
 }
 
-//console.log(mediasAlunas(alunas))
 
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
 
@@ -37,7 +40,6 @@ function nomesAprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-//console.log(nomesAprovadas(alunas))
 
 //3) Fazer uma função que retorne um array de nome das reprovadas
 
@@ -50,33 +52,54 @@ function nomesReprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-// console.log(nomesReprovadas(alunas))
 
 //4) Fazer uma função que retorne um array de objetos
 
 function arrayObjetos(alunas) {
   let medias = mediasAlunas(alunas).filter((alunas) => {
     if (alunas.media >= 7) {
-      let aprovadas = [
-        {
-          nome: alunas.nome,
-          media: alunas.media,
-          aprovadas: true
-        }
-      ]
+      let aprovadas =
+      {
+        nome: alunas.nome,
+        media: alunas.media,
+        aprovadas: alunas.aprovadas
+      }
       console.log(aprovadas)
     } else {
-      let reprovadas = [
-        {
-          nome: alunas.nome,
-          media: alunas.media,
-          aprovadas: false
-        }
-      ]
+      let reprovadas =
+      {
+        nome: alunas.nome,
+        media: alunas.media,
+        aprovadas: alunas.aprovadas
+      }
       console.log(reprovadas)
     }
   })
   return medias
 }
 
+
+//5) Fazer uma função que retorne o nome da aluna com maior nota
+
+function maiorNota(alunas) {
+  let funcaoMedia = mediasAlunas(alunas)
+  let mediaAlunas = funcaoMedia.map((alunas) => alunas.media)
+
+  let mediaMax = mediaAlunas.reduce(function (a, b) {
+    return Math.max(a, b)
+  })
+
+  let notaMaior = funcaoMedia.filter((aluna) => {
+    if (aluna.media == mediaMax) {
+      return aluna.nome
+    }
+  })
+  return notaMaior
+}
+
+
+//console.log(mediasAlunas(alunas))
+//console.log(nomesAprovadas(alunas))
+// console.log(nomesReprovadas(alunas))
 console.log(arrayObjetos(alunas))
+//console.log(maiorNota(alunas))
