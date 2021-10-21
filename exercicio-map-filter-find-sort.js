@@ -11,6 +11,7 @@ const alunas = [
   { nome: "Jane Kelly", prova: { p1: 7, p2: 5.5, p3: 9.1 } }
 ]
 
+
 // 1) Fazer uma função que retorne um array de todas as médias
 
 function mediasAlunas(medias) {
@@ -97,6 +98,7 @@ function maiorNota(alunas) {
   return notaMaior
 }
 
+
 //7) Fazer uma função que retorne o nome da aluna com menor nota
 
 function menorNota(alunas) {
@@ -115,39 +117,52 @@ function menorNota(alunas) {
   return notaMenor
 }
 
-// 1) Fazer uma função que retorne um array de todas as médias
-
-console.log(mediasAlunas(alunas))
-
-// 2) Fazer uma função que retorne um array de nomes das aprovadas
-
-//console.log(nomesAprovadas(alunas))
-
-// 3) Fazer uma função que retorne um array de nome das reprovadas
-
-// console.log(nomesReprovadas(alunas))
-
-// 4) Fazer uma função que retorne um array de objetos:
-//console.log(arrayObjetos(alunas))
-
-//6) Fazer uma função que retorne o nome da aluna com maior nota
-//console.log(maiorNota(alunas))
-
-//7) Fazer uma função que retorne o nome da aluna com menor nota
-
-//console.log(menorNota(alunas))
 
 //8) Fazer uma função que retorne a media de toda a turma
 
 function mediaTurma(alunas) {
-
   let total = mediasAlunas(alunas).reduce(mediaTotal, 0)
+
   function mediaTotal(total, aluna) {
     return (total + (aluna.media))
-
   }
-  let media = (total) / mediasAlunas(alunas).length
-  return media
 
+  let media = total / mediasAlunas(alunas).length
+  return media
 }
+
+
+
+// 1) Fazer uma função que retorne um array de todas as médias
+
+console.log(mediasAlunas(alunas))
+
+
+// 2) Fazer uma função que retorne um array de nomes das aprovadas
+
+console.log(nomesAprovadas(alunas))
+
+
+// 3) Fazer uma função que retorne um array de nome das reprovadas
+
+console.log(nomesReprovadas(alunas))
+
+
+// 4) Fazer uma função que retorne um array de objetos:
+
+console.log(arrayObjetos(alunas))
+
+
+//6) Fazer uma função que retorne o nome da aluna com maior nota
+
+console.log(maiorNota(alunas))
+
+
+//7) Fazer uma função que retorne o nome da aluna com menor nota
+
+console.log(menorNota(alunas))
+
+
+//8) Fazer uma função que retorne a media de toda a turma
+
 console.log(mediaTurma(alunas))
