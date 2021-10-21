@@ -73,7 +73,7 @@ function maiorNota(alunas) {
       return aluna.nome
     }
   })
-  return notaMaior
+  return notaMaior.map(aluna => aluna.nome)
 }
 
 //7) Fazer uma função que retorne o nome da aluna com menor nota
@@ -91,7 +91,7 @@ function menorNota(alunas) {
       return aluna.nome
     }
   })
-  return notaMenor
+  return notaMenor.map(aluna => aluna.nome)
 }
 
 //8) Fazer uma função que retorne a media de toda a turma
