@@ -13,19 +13,11 @@ const alunas = [
 
 // 1) Fazer uma função que retorne um array de todas as médias
 
-function mediasAlunas(medias) {
-  let mediaAluna = medias.map((aluna) => {
-    let media =
-      ((aluna.prova.p1 + aluna.prova.p2 + aluna.prova.p3) / 3).toFixed(1) * 1
-    return ({
-      media: media,
-      nome: aluna.nome,
-      aprovadas: media >= 7
-    })
-  })
-  return mediaAluna.filter((aluna) => aluna.media)
+function mediasNotas(nota) {
+  let notas = mediasAlunas(nota)
+  let mediaNota = notas.map(notas => notas.media)
+  return mediaNota
 }
-
 
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
 
@@ -40,7 +32,6 @@ function nomesAprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-
 //3) Fazer uma função que retorne um array de nome das reprovadas
 
 function nomesReprovadas(alunas) {
@@ -52,34 +43,22 @@ function nomesReprovadas(alunas) {
   return nomeAlunas.map((aluna) => aluna.nome)
 }
 
-
 //4) Fazer uma função que retorne um array de objetos
 
-function arrayObjetos(alunas) {
-  let medias = mediasAlunas(alunas).filter((alunas) => {
-    if (alunas.media >= 7) {
-      let aprovadas =
-      {
-        nome: alunas.nome,
-        media: alunas.media,
-        aprovadas: alunas.aprovadas
-      }
-      return aprovadas
-    } else {
-      let reprovadas =
-      {
-        nome: alunas.nome,
-        media: alunas.media,
-        aprovadas: alunas.aprovadas
-      }
-      return reprovadas
-    }
+function mediasAlunas(medias) {
+  let mediaAluna = medias.map((aluna) => {
+    let media =
+      ((aluna.prova.p1 + aluna.prova.p2 + aluna.prova.p3) / 3).toFixed(1) * 1
+    return ({
+      nome: aluna.nome,
+      media: media,
+      aprovadas: media >= 7
+    })
   })
-  return medias
+  return mediaAluna.filter((aluna) => aluna.media)
 }
 
-
-//5) Fazer uma função que retorne o nome da aluna com maior nota
+//6) Fazer uma função que retorne o nome da aluna com maior nota
 
 function maiorNota(alunas) {
   let funcaoMedia = mediasAlunas(alunas)
@@ -115,6 +94,8 @@ function menorNota(alunas) {
   return notaMenor
 }
 
+//8) Fazer uma função que retorne a media de toda a turma
+
 function mediaTotal(medias) {
   let mediaTurma = mediasAlunas(medias)
   let mediaAlunas = mediaTurma.map((media) => media.media)
@@ -122,11 +103,8 @@ function mediaTotal(medias) {
   return (mediaTotal / mediaAlunas.length).toFixed(1)
 }
 
-
-
 // 1) Fazer uma função que retorne um array de todas as médias
-console.log(mediasAlunas(alunas))
-
+console.log(mediasNotas(alunas))
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
 console.log(nomesAprovadas(alunas))
 
@@ -134,7 +112,7 @@ console.log(nomesAprovadas(alunas))
 console.log(nomesReprovadas(alunas))
 
 // 4) Fazer uma função que retorne um array de objetos:
-console.log(arrayObjetos(alunas))
+console.log(mediasAlunas(alunas))
 
 //6) Fazer uma função que retorne o nome da aluna com maior nota
 console.log(maiorNota(alunas))
