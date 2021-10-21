@@ -117,7 +117,7 @@ function menorNota(alunas) {
 
 // 1) Fazer uma função que retorne um array de todas as médias
 
-//console.log(mediasAlunas(alunas))
+console.log(mediasAlunas(alunas))
 
 // 2) Fazer uma função que retorne um array de nomes das aprovadas
 
@@ -128,7 +128,7 @@ function menorNota(alunas) {
 // console.log(nomesReprovadas(alunas))
 
 // 4) Fazer uma função que retorne um array de objetos:
-console.log(arrayObjetos(alunas))
+//console.log(arrayObjetos(alunas))
 
 //6) Fazer uma função que retorne o nome da aluna com maior nota
 //console.log(maiorNota(alunas))
@@ -136,3 +136,18 @@ console.log(arrayObjetos(alunas))
 //7) Fazer uma função que retorne o nome da aluna com menor nota
 
 //console.log(menorNota(alunas))
+
+//8) Fazer uma função que retorne a media de toda a turma
+
+function mediaTurma(alunas) {
+
+  let total = mediasAlunas(alunas).reduce(mediaTotal, 0)
+  function mediaTotal(total, aluna) {
+    return (total + (aluna.media))
+
+  }
+  let media = (total) / mediasAlunas(alunas).length
+  return media
+
+}
+console.log(mediaTurma(alunas))
